@@ -12,7 +12,7 @@
   "node": true,
   "strict": true,
   "globalstrict": true,
-  "globals": { "eio": true},
+  "globals": { "eio": true, "Promise": true },
   "white": true,
   "indent": 2,
   "maxlen": 100,
