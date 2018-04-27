@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nolanlawson/socket-pouch.git"
+    "url": "git://github.com/rykunbwoy/socket-pouch.git"
   },
   "keywords": [
     "pouch",
