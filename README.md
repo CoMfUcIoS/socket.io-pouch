@@ -1,4 +1,4 @@
-socket-pouch [![Build Status](https://travis-ci.org/nolanlawson/socket-pouch.svg)](https://travis-ci.org/nolanlawson/socket-pouch)
+socket.io-pouch [![Build Status](https://travis-ci.org/ioannis.karasavvaidis/socket.io-pouch.svg)](https://travis-ci.org/ioannis.karasavvaidis/socket.io-pouch)
 =====
 
 ```js
@@ -30,10 +30,24 @@ var socketPouchServer = require('socket-pouch/server');
 socketPouchServer.listen(80);
 ```
 
+Or you can attach to an already initialized socket.io socket server
+```js
+var io = require('socket.io');
+var socketPouchServer = require('socket-pouch/server');
+var http = require('http');
+
+var server = http.createServer();
+var ioSock = io.listen(server);
+
+socketPouchServer.listen(ioSock, {
+    attach: true,
+  });
+```
+
 #### Client
 
 ##### In the browser
-    
+
 When you `npm install socket-pouch`, the client JS file is available at `node_modules/socket-pouch/dist/socket-pouch.client.js`. Or you can just download it from Github above.
 
 Then include it in your HTML, after PouchDB:
@@ -81,7 +95,7 @@ socketPouchServer.listen(80, {}, function () {
 * **port**: the port to listen on. You should probably use 80 or 443 if you plan on running this in production; most browsers are finicky about other ports. 8080 may work in Chrome during debugging.
 * **options**: (optional) options object
   * **remoteUrl**: tells socket-pouch to act as a proxy for a remote CouchDB at the given URL (rather than creating local PouchDB databases)
-  * **pouchCreator**: alternatively, you can supply a custom function that takes a string and returns any PouchDB object however you like. (See examples below.) 
+  * **pouchCreator**: alternatively, you can supply a custom function that takes a string and returns any PouchDB object however you like. (See examples below.)
   * **socketOptions**: (optional) options passed verbatim to Engine.io. See [their documentation](https://github.com/Automattic/engine.io/#methods) for details.
 * **callback**: (optional) called when the server has started
 
@@ -227,7 +241,7 @@ Testing
 This will run the tests in Node using LevelDB:
 
     npm test
-    
+
 You can also check for 100% code coverage using:
 
     npm run coverage

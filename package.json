@@ -1,11 +1,11 @@
 {
-  "name": "socket-pouch",
-  "version": "2.0.0",
-  "description": "PouchDB over websockets",
+  "name": "@puppet/socket.io-pouch",
+  "version": "2.1.0",
+  "description": "PouchDB over Socket.IO",
   "main": "server/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/rykunbwoy/socket-pouch.git"
+    "url": "git://github.com/ioannis.karasavvaidis/socket-pouch.git"
   },
   "keywords": [
     "pouch",
@@ -18,7 +18,7 @@
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/nolanlawson/socket-pouch/issues"
+    "url": "https://github.com/ioannis.karasavvaidis/socket.io-pouch/issues"
   },
   "scripts": {
     "test-node": "bash ./bin/test-node.sh",
