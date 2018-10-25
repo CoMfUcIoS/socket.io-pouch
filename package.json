@@ -1,11 +1,11 @@
 {
   "name": "@puppet/socket.io-pouch",
-  "version": "2.1.0",
+  "version": "1.0.0",
   "description": "PouchDB over Socket.IO",
   "main": "server/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ioannis.karasavvaidis/socket-pouch.git"
+    "url": "git://github.com/ioannis.karasavvaidis/socket.io-pouch.git"
   },
   "keywords": [
     "pouch",
@@ -26,8 +26,8 @@
     "jshint": "jshint -c .jshintrc lib test/test.js",
     "test": "npm run jshint && ./bin/run-test.sh",
     "build": "mkdirp dist && npm run browserify && npm run min",
-    "browserify": "browserify -s socketPouch client | ./bin/es3ify.js | derequire > dist/socket-pouch.client.js",
-    "min": "uglifyjs dist/socket-pouch.client.js -mc > dist/socket-pouch.client.min.js",
+    "browserify": "browserify -s socketPouch client | ./bin/es3ify.js | derequire > dist/socket.io-pouch.client.js",
+    "min": "uglifyjs dist/socket.io-pouch.client.js -mc > dist/socket.io-pouch.client.min.js",
     "dev": "browserify test/test.js > test/test-bundle.js && npm run dev-server",
     "dev-server": "./bin/dev-server.js",
     "coverage": "npm test --coverage && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100"
