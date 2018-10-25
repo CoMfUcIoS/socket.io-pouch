@@ -1,4 +1,4 @@
-socket.io-pouch [![Build Status](https://travis-ci.org/ioannis.karasavvaidis/socket.io-pouch.svg)](https://travis-ci.org/ioannis.karasavvaidis/socket.io-pouch)
+socket.io-pouch [![Build Status](https://travis-ci.org/ioannis-karasavvaidis/socket.io-pouch.svg)](https://travis-ci.org/Ioannis-Karasavvaidis/socket.io-pouch)
 =====
 
 ```js
@@ -6,26 +6,26 @@ socket.io-pouch [![Build Status](https://travis-ci.org/ioannis.karasavvaidis/soc
 var db = new PouchDB('mydb', {adapter: 'socket', url: 'ws://localhost:80'});
 ```
 
-Adapter plugin that proxies all PouchDB API calls to another PouchDB running on the server in Node.js. The communication mechanism is [Engine.io](https://github.com/Automattic/engine.io), the famous core of [Socket.io](http://socket.io/).
+Adapter plugin that proxies all PouchDB API calls to another PouchDB running on the server in Node.js. The communication mechanism is [Socket.io](http://socket.io/).
 
-This means that instead of syncing over HTTP, socket-pouch syncs over WebSockets. Thanks to Engine.io, it falls back to XHR polling in browsers that don't support WebSockets.
+This means that instead of syncing over HTTP, socket.io-pouch syncs over WebSockets. Thanks to Engine.io, it falls back to XHR polling in browsers that don't support WebSockets.
 
-The socket-pouch library has two parts:
+The socket.io-pouch library has two parts:
 
 * **A Node.js server**, which can create local PouchDBs or proxy to a remote CouchDB.
 * **A JavaScript client**, which can run in Node.js or the browser.
 
-This adapter passes [the full PouchDB test suite](https://travis-ci.org/nolanlawson/socket-pouch). It requires PouchDB 5.0.0+.
+This adapter passes [the full PouchDB test suite](https://travis-ci.org/ioannis-karasavvaidis/socket.io-pouch). It requires PouchDB 5.0.0+.
 
 Usage
 ---
 
-    $ npm install socket-pouch
+    $ npm install @puppet/socket.io-pouch
 
 #### Server
 
 ```js
-var socketPouchServer = require('socket-pouch/server');
+var socketPouchServer = require('socket.io-pouch/server');
 
 socketPouchServer.listen(80);
 ```
@@ -33,7 +33,7 @@ socketPouchServer.listen(80);
 Or you can attach to an already initialized socket.io socket server
 ```js
 var io = require('socket.io');
-var socketPouchServer = require('socket-pouch/server');
+var socketPouchServer = require('socket.io-pouch/server');
 var http = require('http');
 
 var server = http.createServer();
@@ -48,13 +48,13 @@ socketPouchServer.listen(ioSock, {
 
 ##### In the browser
 
-When you `npm install socket-pouch`, the client JS file is available at `node_modules/socket-pouch/dist/socket-pouch.client.js`. Or you can just download it from Github above.
+When you `npm install @puppet/socket.io-pouch`, the client JS file is available at `node_modules/socket.io-pouch/dist/socket.io-pouch.client.js`. Or you can just download it from Github above.
 
 Then include it in your HTML, after PouchDB:
 
 ```html
 <script src="pouchdb.js"></script>
-<script src="socket-pouch.client.js"></script>
+<script src="socket.io-pouch.client.js"></script>
 ```
 
 Then you can create a socket-powered PouchDB using:
@@ -72,7 +72,7 @@ The same rules apply, but you have to notify PouchDB of the new adapter:
 
 ```js
 var PouchDB = require('pouchdb');
-PouchDB.adapter('socket', require('socket-pouch/client'));
+PouchDB.adapter('socket', require('@puppet/socket.io-pouch/client'));
 ```
 
 API
@@ -81,7 +81,7 @@ API
 ### Server
 
 ```js
-var socketPouchServer = require('socket-pouch/server');
+var socketPouchServer = require('@puppet/socket.io-pouch/server');
 
 socketPouchServer.listen(80, {}, function () {
   // server started
@@ -94,7 +94,8 @@ socketPouchServer.listen(80, {}, function () {
 
 * **port**: the port to listen on. You should probably use 80 or 443 if you plan on running this in production; most browsers are finicky about other ports. 8080 may work in Chrome during debugging.
 * **options**: (optional) options object
-  * **remoteUrl**: tells socket-pouch to act as a proxy for a remote CouchDB at the given URL (rather than creating local PouchDB databases)
+  * **attach**: (optional) Boolean. Tells socket.io-pouch to use port variable as a socket server and attach to it.
+  * **remoteUrl**: tells socket.io-pouch to act as a proxy for a remote CouchDB at the given URL (rather than creating local PouchDB databases)
   * **pouchCreator**: alternatively, you can supply a custom function that takes a string and returns any PouchDB object however you like. (See examples below.)
   * **socketOptions**: (optional) options passed verbatim to Engine.io. See [their documentation](https://github.com/Automattic/engine.io/#methods) for details.
 * **callback**: (optional) called when the server has started
@@ -186,7 +187,7 @@ For details, see the official [`replicate()`](http://pouchdb.com/api.html#replic
 var remoteDB = new PouchDB({adapter: 'socket', name: 'remote', url: 'ws://localhost:80'});
 ```
 
-You can also talk to this `remoteDB` as if it were a normal PouchDB. All the standard methods like `info()`, `get()`, `put()`, and `putAttachment()` will work. The [Travis tests](https://travis-ci.org/nolanlawson/socket-pouch) run the full PouchDB test suite.
+You can also talk to this `remoteDB` as if it were a normal PouchDB. All the standard methods like `info()`, `get()`, `put()`, and `putAttachment()` will work. The [Travis tests](https://travis-ci.org/ioannis-karasavvaidis/socket.io-pouch) run the full PouchDB test suite.
 
 ### Debugging
 
@@ -219,9 +220,15 @@ Unfortuantely, not at the moment.
 
 This is a custom PouchDB adapter. Other examples of PouchDB adapters include the built-in IndexedDB, WebSQL, LevelDB, and HTTP (Couch) adapters, as well as a partial adapter written for [pouchdb-replication-stream](https://github.com/nolanlawson/pouchdb-replication-stream) and [worker-pouch](https://github.com/nolanlawson/worker-pouch), which is a fork of this repo.
 
-Changelog
+Changelog since we Forked
 ---
+- 1.0.0
+  - Using Socket.io instead of pure websockets
+  - Added attach to an already initialized socket.io server
+  - Updated all vulnerable dependencies
 
+Changelog of the Forked Repo
+---
 - 2.0.0
   - Support for PouchDB 6.0.0, drop support for PouchDB <=5
 - 1.0.0
