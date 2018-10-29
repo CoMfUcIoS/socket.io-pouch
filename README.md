@@ -1,4 +1,4 @@
-socket.io-pouch [![Build Status](https://travis-ci.org/ioannis-karasavvaidis/socket.io-pouch.svg)](https://travis-ci.org/Ioannis-Karasavvaidis/socket.io-pouch)
+socket.io-pouch [![Build Status](https://travis-ci.org/ioannis-karasavvaidis/socket.io-pouch.svg)](https://travis-ci.org/Ioannis-Karasavvaidis/socket.io-pouch) [![codecov](https://codecov.io/gh/Ioannis-Karasavvaidis/socket.io-pouch/branch/master/graph/badge.svg)](https://codecov.io/gh/Ioannis-Karasavvaidis/socket.io-pouch)
 =====
 
 ```js
