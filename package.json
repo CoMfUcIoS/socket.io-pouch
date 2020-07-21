@@ -39,7 +39,7 @@
     "argsarray": "0.0.1",
     "blob-util": "^1.1.1",
     "bluebird": "^2.9.24",
-    "codecov": "^3.6.5",
+    "codecov": "^3.7.1",
     "debug": "^2.1.3",
     "engine.io": "^1.5.1",
     "engine.io-client": "^3.2.1",
