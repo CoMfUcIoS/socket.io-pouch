@@ -1,0 +1,28 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-ENGINEIO-1056749:
+    - engine.io:
+        reason: no time atm
+        expires: '2022-01-05T18:36:01.869Z'
+    - socket.io > engine.io:
+        reason: no time atm
+        expires: '2022-01-05T18:36:01.870Z'
+  SNYK-JS-WS-1296835:
+    - engine.io > ws:
+        reason: no time atm
+        expires: '2022-01-05T18:36:01.869Z'
+  'npm:debug:20170905':
+    - engine.io > debug:
+        reason: no time atm
+        expires: '2022-01-05T18:36:01.869Z'
+  'npm:ms:20170412':
+    - engine.io > debug > ms:
+        reason: no time atm
+        expires: '2022-01-05T18:36:01.870Z'
+  SNYK-JS-NODEFETCH-674311:
+    - pouchdb > node-fetch:
+        reason: no time atm
+        expires: '2022-01-05T18:36:01.870Z'
+patch: {}
