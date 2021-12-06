@@ -51,7 +51,7 @@
     "pouchdb-binary-util": "^1.0.0",
     "pouchdb-promise": "^6.0.7",
     "scope-eval": "^1.0.0",
-    "socket.io": "^2.1.0",
+    "socket.io": "^2.4.0",
     "socket.io-client": "^2.1.0"
   },
   "devDependencies": {
