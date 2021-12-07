@@ -1,0 +1,38 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-ENGINEIO-1056749:
+    - engine.io:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+    - socket.io > engine.io:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+  SNYK-JS-WS-1296835:
+    - engine.io > ws:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+    - socket.io > socket.io-client > engine.io-client > ws:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+    - socket.io > engine.io > ws:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+  'npm:ms:20170412':
+    - engine.io > debug > ms:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+  'npm:debug:20170905':
+    - engine.io > debug:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+  SNYK-JS-XMLHTTPREQUESTSSL-1082936:
+    - socket.io > socket.io-client > engine.io-client > xmlhttprequest-ssl:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+  SNYK-JS-XMLHTTPREQUESTSSL-1255647:
+    - socket.io > socket.io-client > engine.io-client > xmlhttprequest-ssl:
+        reason: no time atm
+        expires: '2022-01-06T16:30:34.172Z'
+patch: {}

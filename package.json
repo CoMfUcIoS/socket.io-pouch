@@ -1,6 +1,6 @@
 {
   "name": "@puppet/socket.io-pouch",
-  "version": "1.1.0",
+  "version": "1.2.0-rc3",
   "description": "PouchDB over Socket.IO",
   "main": "server/index.js",
   "publishConfig": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ioannis.karasavvaidis/socket.io-pouch.git"
+    "url": "git://github.com/comfucios/socket.io-pouch.git"
   },
   "keywords": [
     "pouch",
@@ -21,7 +21,7 @@
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ioannis.karasavvaidis/socket.io-pouch/issues"
+    "url": "https://github.com/comfucios/socket.io-pouch/issues"
   },
   "scripts": {
     "test-node": "bash ./bin/test-node.sh",
@@ -42,7 +42,7 @@
     "codecov": "^3.7.1",
     "debug": "^2.1.3",
     "engine.io": "^1.5.1",
-    "engine.io-client": "^3.2.1",
+    "engine.io-client": "^3.5.0",
     "es6-promise-pool": "^2.5.0",
     "eval": "^0.1.0",
     "inherits": "^2.0.1",
@@ -52,7 +52,7 @@
     "pouchdb-promise": "^6.0.7",
     "scope-eval": "^1.0.0",
     "socket.io": "^2.4.0",
-    "socket.io-client": "^2.1.0"
+    "socket.io-client": "^2.4.0"
   },
   "devDependencies": {
     "browserify": "^9.0.8",
@@ -60,7 +60,7 @@
     "chai-as-promised": "^5.1.0",
     "corsproxy": "^0.2.14",
     "cryptiles": "^4.1.2",
-    "derequire": "^2.0.0",
+    "derequire": "^2.1.1",
     "ecstatic": "^4.1.4",
     "es3ify": "^0.1.3",
     "es5-shim": "^4.1.1",
@@ -69,7 +69,7 @@
     "hoek": "^5.0.4",
     "http-server": "^0.8.5",
     "istanbul": "^0.2.7",
-    "jshint": "2.8.0",
+    "jshint": "^2.13.1",
     "lodash": "^4.17.21",
     "mkdirp": "^0.5.0",
     "mocha": "^2.3.1",
