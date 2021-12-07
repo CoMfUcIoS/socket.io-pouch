@@ -25,4 +25,7 @@ ignore:
     - pouchdb > node-fetch:
         reason: no time atm
         expires: '2022-01-05T18:36:01.870Z'
+      add-cors-to-couchdb > node-fetch:
+        reason: No time atm
+        expires: '2022-01-06T14:48:35.630Z'
 patch: {}

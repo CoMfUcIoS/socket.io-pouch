@@ -1,4 +1,4 @@
-socket.io-pouch [![Build Status](https://travis-ci.org/ioannis-karasavvaidis/socket.io-pouch.svg)](https://travis-ci.org/Ioannis-Karasavvaidis/socket.io-pouch) [![codecov](https://codecov.io/gh/Ioannis-Karasavvaidis/socket.io-pouch/branch/master/graph/badge.svg)](https://codecov.io/gh/Ioannis-Karasavvaidis/socket.io-pouch)
+socket.io-pouch [![Build Status](https://travis-ci.com/comfucios/socket.io-pouch.svg)](https://travis-ci.com/comfucios/socket.io-pouch) [![codecov](https://codecov.io/gh/comfucios/socket.io-pouch/branch/master/graph/badge.svg)](https://codecov.io/gh/comfucios/socket.io-pouch)
 =====
 
 ```js
@@ -15,7 +15,7 @@ The socket.io-pouch library has two parts:
 * **A Node.js server**, which can create local PouchDBs or proxy to a remote CouchDB.
 * **A JavaScript client**, which can run in Node.js or the browser.
 
-This adapter passes [the full PouchDB test suite](https://travis-ci.org/ioannis-karasavvaidis/socket.io-pouch). It requires PouchDB 5.0.0+.
+This adapter passes [the full PouchDB test suite](https://travis-ci.com/comfucios/socket.io-pouch). It requires PouchDB 5.0.0+.
 
 Usage
 ---
@@ -187,7 +187,7 @@ For details, see the official [`replicate()`](http://pouchdb.com/api.html#replic
 var remoteDB = new PouchDB({adapter: 'socket', name: 'remote', url: 'ws://localhost:80'});
 ```
 
-You can also talk to this `remoteDB` as if it were a normal PouchDB. All the standard methods like `info()`, `get()`, `put()`, and `putAttachment()` will work. The [Travis tests](https://travis-ci.org/ioannis-karasavvaidis/socket.io-pouch) run the full PouchDB test suite.
+You can also talk to this `remoteDB` as if it were a normal PouchDB. All the standard methods like `info()`, `get()`, `put()`, and `putAttachment()` will work. The [Travis tests](https://travis-ci.com/comfucios/socket.io-pouch) run the full PouchDB test suite.
 
 ### Debugging
 

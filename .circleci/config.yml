@@ -1,0 +1,52 @@
+
+version: 2.1
+
+machine:
+  pre:
+    - sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:stretch-browsers
+      - image: couchdb
+        environment:
+          COUCHDB_USER: admin
+          COUCHDB_PASSWORD: admin
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - setup_remote_docker
+      # Install CouchDB 2
+      # Wait for DB to be ready
+      - run: sudo npm install wait-on -g
+      - run: wait-on tcp:5984
+      # Create system DBs
+      - run: curl -X PUT http://admin:admin@localhost:5984/_users
+      - run: curl -X PUT http://admin:admin@localhost:5984/_replicator
+      - run: curl -X PUT http://admin:admin@localhost:5984/_global_changes
+
+      # Enable CORS
+      - run: sudo npm install -g add-cors-to-couchdb
+      - run: add-cors-to-couchdb http://localhost:5984 -u admin -p admin
+
+      - run:
+          name: Run Tests
+          environment:
+            CLIENT : selenium:firefox:41.0.1
+          command: npm run test
+
+
+workflows:
+  orb-free-workflow:
+    jobs:
+      - test
