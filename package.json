@@ -1,6 +1,6 @@
 {
   "name": "@puppet/socket.io-pouch",
-  "version": "1.2.0-rc3",
+  "version": "1.2.0",
   "description": "PouchDB over Socket.IO",
   "main": "server/index.js",
   "publishConfig": {
