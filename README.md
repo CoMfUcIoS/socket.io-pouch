@@ -20,7 +20,7 @@ This adapter passes [the full PouchDB test suite](https://travis-ci.org/comfucio
 Usage
 ---
 
-    $ npm install @puppet/socket.io-pouch
+    $ npm install socket.io-pouch
 
 #### Server
 
@@ -48,7 +48,7 @@ socketPouchServer.listen(ioSock, {
 
 ##### In the browser
 
-When you `npm install @puppet/socket.io-pouch`, the client JS file is available at `node_modules/socket.io-pouch/dist/socket.io-pouch.client.js`. Or you can just download it from Github above.
+When you `npm install socket.io-pouch`, the client JS file is available at `node_modules/socket.io-pouch/dist/socket.io-pouch.client.js`. Or you can just download it from Github above.
 
 Then include it in your HTML, after PouchDB:
 
@@ -72,7 +72,7 @@ The same rules apply, but you have to notify PouchDB of the new adapter:
 
 ```js
 var PouchDB = require('pouchdb');
-PouchDB.adapter('socket', require('@puppet/socket.io-pouch/client'));
+PouchDB.adapter('socket', require('socket.io-pouch/client'));
 ```
 
 API
@@ -81,7 +81,7 @@ API
 ### Server
 
 ```js
-var socketPouchServer = require('@puppet/socket.io-pouch/server');
+var socketPouchServer = require('socket.io-pouch/server');
 
 socketPouchServer.listen(80, {}, function () {
   // server started
