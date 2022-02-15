@@ -1,6 +1,6 @@
 {
   "name": "socket.io-pouch",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "PouchDB over Socket.IO",
   "main": "server/index.js",
   "repository": {
