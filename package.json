@@ -1,11 +1,8 @@
 {
-  "name": "@puppet/socket.io-pouch",
-  "version": "1.2.0",
+  "name": "socket.io-pouch",
+  "version": "1.2.1",
   "description": "PouchDB over Socket.IO",
   "main": "server/index.js",
-  "publishConfig": {
-    "registry": "https://artifactory.delivery.puppetlabs.net/artifactory/api/npm/npm/"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/comfucios/socket.io-pouch.git"
